@@ -62,10 +62,12 @@ public class ClientReceiver extends Thread {
 
             }
         } catch (SocketException ignored) {
+            socket.close();
 
         } catch (IOException ex) {
             System.err.println("Some I/) errors occurred!");
             ex.printStackTrace();
+            socket.close();
         }
     }
 
