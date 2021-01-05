@@ -27,6 +27,7 @@ public class ClientReceiver extends Thread {
 
     @Override
     public void run() {
+        System.setOut(new PrintStream(System.out, true, StandardCharsets.UTF_8));
         byte[] buffer = new byte[1024];
         DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
         try {
